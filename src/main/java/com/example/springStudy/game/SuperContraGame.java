@@ -1,12 +1,12 @@
 package com.example.springStudy.game;
 
-public class MarioGame implements GamingConsole{
+public class SuperContraGame implements GamingConsole{
     public void up() {
-        System.out.println("jump");
+        System.out.println("up");
     }
 
     public void down() {
-        System.out.println("down");
+        System.out.println("sit down");
     }
 
     public void left() {
@@ -14,7 +14,6 @@ public class MarioGame implements GamingConsole{
     }
 
     public void right() {
-        System.out.println("jump");
+        System.out.println("shoot a bullet");
     }
-
 }
