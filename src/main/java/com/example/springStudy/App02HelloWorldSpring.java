@@ -28,5 +28,10 @@ public class App02HelloWorldSpring {
         // 컨텍스트에서 값을 가져오는 방법 중 1가지는 이름으로 가져오는 것 ex) 메서드 명
         System.out.println(context.getBean("name")); // 스프링이 관리 중이라 스프링 컨텍스트를 실행해 컨텍스트 안의 특정 빈을 가져오기 O
 
+        System.out.println(context.getBean("age"));
+
+        System.out.println(context.getBean("person"));
+
+        System.out.println(context.getBean("address"));
     }
 }
