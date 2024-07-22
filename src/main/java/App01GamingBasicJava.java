@@ -1,5 +1,3 @@
-package com.example.springStudy;
-
 import com.example.springStudy.game.GameRunner;
 import com.example.springStudy.game.MarioGame;
 import com.example.springStudy.game.PackmamGame;

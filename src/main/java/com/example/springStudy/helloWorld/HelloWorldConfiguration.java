@@ -1,4 +1,4 @@
-package com.example.springStudy;
+package com.example.springStudy.helloWorld;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Primary;
 
 
 // record: 사용자 정의 클래스를 만들 때 getter 등이 필요. record는  getter, setter, 생성자, toString 자동 생성으로 자바 빈을 만드는 것 더 간결화해줌.
-record Person(String name, int age, Address address) {
+ record Person(String name, int age, Address address) {
 }
 
 record Address(String firstLine, String state, String city, String zip) {
