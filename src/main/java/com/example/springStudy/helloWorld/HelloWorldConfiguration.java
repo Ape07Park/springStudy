@@ -61,7 +61,7 @@ public class HelloWorldConfiguration {
      * 빈의 이름을 메서드의 이름이 아닌 내가 지정한 이름으로 사용할 시 name=~~ 를 사용함
      */
     @Bean(name = "address2")
-    @Primary // Address라는 빈을 사용할 때 기본적(우선적)으로 사용하는 것임을 명시
+    @Primary // ~~.class로 부를 때 or Address라는 빈을 사용할 때 기본적(우선적)으로 사용하는 것임을 명시
     public Address address() {
         return new Address("korea", "경기", "의왕", "16666");
     }
@@ -82,7 +82,7 @@ public class HelloWorldConfiguration {
     }
 
     @Bean(name = "address3")
-    @Qualifier("address3Qualifier") // @Primary로 지정한 빈 말고 같은 종류의 다른 빈을 사용하고 싶을 때 사용
+    @Qualifier("address3Qualifier") // @Primary로 지정한 빈 말고 같은 클래스를 리턴하는 다른 빈을 사용하고 싶을 때 사용
     public Address address3() {
         return new Address("US", "DC", "ciatle", "22222");
     }
