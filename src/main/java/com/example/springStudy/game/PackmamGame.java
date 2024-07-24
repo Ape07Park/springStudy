@@ -3,21 +3,21 @@ package com.example.springStudy.game;
 public class PackmamGame implements GamingConsole{
     @Override
     public void up() {
-        System.out.println("up");
+        System.out.println("pac up");
     }
 
     @Override
     public void down() {
-        System.out.println("down");
+        System.out.println("pac down");
     }
 
     @Override
     public void left() {
-        System.out.println("left");
+        System.out.println("pac left");
     }
 
     @Override
     public void right() {
-        System.out.println("right");
+        System.out.println("pac right");
     }
 }

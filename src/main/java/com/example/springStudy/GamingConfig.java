@@ -19,16 +19,22 @@ public class GamingConfig {
         return game;
     }
 
-    @Bean(name = "mario")
-    public GamingConsole gaming2() {
-        var game = new MarioGame();
-        return game;
-    }
+//    @Bean(name = "mario")
+//    public GamingConsole gaming2() {
+//        var game = new MarioGame();
+//        return game;
+//    }
 
-    @Bean
-    public GameRunner gameRunner() {
-        return new GameRunner(gaming());
-    }
-
+    /**
+     * new GameRunner()에 넣을 것
+     * 1. 메서드 채로 가져오기 ex) new GameRunner(gaming())
+     * 2. game을 매개 변수로 전달하기 ex)  public GameRunner gameRunner(GamingConsole game)
+     *
+     */
+     @Bean
+    public GameRunner gameRunner(GamingConsole game) {
+        var gameRunner = new GameRunner(game);
+        return gameRunner;
+     }
 
 }
