@@ -1,5 +1,7 @@
 package com.example.springStudy.game;
 
+import org.springframework.stereotype.Component;
+@Component
 public class GameRunner {
   private GamingConsole game;
 
@@ -19,6 +21,7 @@ public class GameRunner {
      *  인터페이스를 만들어 그 인터페이스를 각 게임이 구현하게 만들어 필요한 기능을 갖추도록 함
      *  특정 게임에 따라 GameRunner 클래스는 변경 x
      */
+
 
    public GameRunner(GamingConsole game) {
        this.game = game;

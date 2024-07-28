@@ -2,14 +2,13 @@ package com.example.springStudy;
 
 import com.example.springStudy.game.GameRunner;
 import com.example.springStudy.game.GamingConsole;
-import com.example.springStudy.game.MarioGame;
-import com.example.springStudy.game.PackmamGame;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class App03GamingSpringBeans {
+@ComponentScan("com.example.springStudy.game") // game 폴더를 스캔하도록 지시
+public class GamingAppLauncherApplication {
 
 
     /**
@@ -17,24 +16,23 @@ public class App03GamingSpringBeans {
      * 그 역할을 하는 것이 @ComponentScan
       */
 
-    @Bean
-    public GameRunner gameRunner(GamingConsole game) {
-        var gameRunner = new GameRunner(game);
-        return gameRunner;
-    }
+//    @Bean
+//    public GameRunner gameRunner(GamingConsole game) { // 스프링이 @Component를 달은 pacmanGame의 인스턴스를 자동으로 생성해 GamingConsole로 autoWiring함
+//        System.out.println("param" + game);
+//        var gameRunner = new GameRunner(game);
+//        return gameRunner;
+//    }
 
     /*
     main 함수
      */
     public static void main(String[] args) {
 
-       try(AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(App03GamingSpringBeans.class)) {
+       try(AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(GamingAppLauncherApplication.class)) {
 
            context.getBean(GamingConsole.class).up();
 
-          PackmamGame packmamGame = context.getBean(PackmamGame.class);
-
-          // 의존성-packmamGame-이 주입 == autowiring
+          // 의존성-packmamGame- 인스턴스가 스프링에서 자동으로 생성되어 주입 == autowiring
            GameRunner gameRunner = context.getBean(GameRunner.class);
 
            gameRunner.run();
