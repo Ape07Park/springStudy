@@ -1,8 +1,10 @@
 package com.example.springStudy.game;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 @Component
 public class GameRunner {
+
   private GamingConsole game;
 
     /**
@@ -22,8 +24,8 @@ public class GameRunner {
      *  특정 게임에 따라 GameRunner 클래스는 변경 x
      */
 
-
-   public GameRunner(GamingConsole game) {
+    // 여기서 생성자 주입이 일어남.
+   public GameRunner(@Qualifier("superContra") GamingConsole game) {
        this.game = game;
    }
 

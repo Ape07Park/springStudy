@@ -11,7 +11,7 @@ public class App01GamingBasicJava {
         var game = new MarioGame();
 //      var game = new SuperContraGame();
         PackmamGame packmamGame = new PackmamGame();
-        var gameRunner = new GameRunner(packmamGame); // 객체 생성 및 의존성 연결
+//        var gameRunner = new GameRunner(packmamGame); // 객체 생성 및 의존성 연결
 //        gameRunner의 의존성은 게임들-gameConsole을 구현한-임. 이유는 게임이 없으면 gameRunner 실행 x라서
 
         /**
@@ -23,7 +23,7 @@ public class App01GamingBasicJava {
          */
 
 
-        gameRunner.run();
+//        gameRunner.run();
 
     }
 }
