@@ -1,7 +1,5 @@
-package com.example.springStudy;
+package com.example.springStudy.game;
 
-import com.example.springStudy.game.GameRunner;
-import com.example.springStudy.game.GamingConsole;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
