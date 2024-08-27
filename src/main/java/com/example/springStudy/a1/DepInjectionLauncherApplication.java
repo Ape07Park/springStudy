@@ -75,7 +75,7 @@ class Dependency2{
 }
 
 @Configuration // @Configuration도 빈임
-@ComponentScan() // 빈값으로 두면 자기 현재 페키지 스캔
+@ComponentScan() // 빈값으로 두면 자기 현재 페키지 스캔, 특정 페키지를 넣으면 그 페키지를 스캔함
 public class DepInjectionLauncherApplication {
 
     /*
@@ -92,3 +92,10 @@ public class DepInjectionLauncherApplication {
        }
     }
 }
+
+/**
+ * @Component: 인스턴스를 스프링이 관리
+ * @ComponentScan(): 어느 페키지를 스캔해야 하는지 알림
+ *  DI: 빈과 그것들의 그것들의 의존성들을 찾고 연결. 원래는 사람이 객체 생성하고 그에 필요한 의존성을 넣어야 하지만 스프링이 그것을 함(제어)으로 인해 IOC(제어의 역전)라고 함
+ *  Autowiring: 스프링이 특정 빈에 대한 의존성(생성자)이 무엇인지 판별해 의존성(생성자)을 자동으로 넣어줌
+ */
