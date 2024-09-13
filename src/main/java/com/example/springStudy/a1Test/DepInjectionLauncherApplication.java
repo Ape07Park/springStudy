@@ -18,6 +18,11 @@ public class DepInjectionLauncherApplication {
 
         try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(DepInjectionLauncherApplication.class)) {
 
+            DataService dataService = context.getBean(DataService.class);
+
+           int [] arr = dataService.retrieveData();
+           System.out.println(Arrays.toString(arr));
+
 
         }
     }
