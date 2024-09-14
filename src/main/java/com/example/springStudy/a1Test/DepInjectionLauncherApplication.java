@@ -18,12 +18,14 @@ public class DepInjectionLauncherApplication {
 
         try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(DepInjectionLauncherApplication.class)) {
 
+            Arrays.stream(context.getBeanDefinitionNames()).forEach((System.out::println));
+
             DataService dataService = context.getBean(DataService.class);
+            BusinessCalculationService businessCalculationService = context.getBean(BusinessCalculationService.class);
 
            int [] arr = dataService.retrieveData();
            System.out.println(Arrays.toString(arr));
-
-
+            System.out.println(businessCalculationService.findMax());
         }
     }
 }

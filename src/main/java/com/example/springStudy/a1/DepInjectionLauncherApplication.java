@@ -82,7 +82,6 @@ public class DepInjectionLauncherApplication {
     main 함수
      */
     public static void main(String[] args) {
-
        try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(DepInjectionLauncherApplication.class)) {
            Arrays.stream(context.getBeanDefinitionNames()).forEach((System.out::println));
 
