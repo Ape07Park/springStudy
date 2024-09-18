@@ -21,7 +21,7 @@ public class GamingAppLauncherApplication {
 //        return gameRunner;
 //    }
 
-    // @Primary: 우선권 주기 여러 개의 자격이 있는 후보가 있을 떄
+    // @Primary: 우선권 주기 여러 개의 자격이 있는 후보가 있을 때
     // @Qualifier: 특정 빈을 지정해 autoWiring함
     // ** @Primary, @Qualifier를 선택할 때 항상 특정 의존성을 사용하는 클래스의 관점에서 생각할 것
     // **   @Qualifier가 @Primary보다 더 높은 우선순위 지님

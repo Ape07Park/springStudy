@@ -9,47 +9,6 @@ public class App02HelloWorldSpring {
     public static void main(String[] args) {
 
         /**
-         * 스프링 컨테이너(스프링 컨텍스트, IOC-제어의 역전- 컨테이너): 스프링 빈과 수명주기 관리
-         * 스프링 컨테이너의 인풋: POJOs, Config
-         * 스프링 컨테이너의 아웃풋: ready system
-         * 자바 클래스를 만들고 설정을 만들면 IOC 컨테이너가 런타임 시스템을 만듦
-         * 그 만들어진 런타임 시스템이 spring 컨텍스트를 만들고 모든 빈 관리
-         */
-
-        /**
-         * 스프링 컨테이너의 두 구성요소
-         * 1. bean Factory: 기본 스프링 컨테이너, 거의 사용 X
-         * 2. application context: 엔터프라이즈 전용이 있는 고급 스프링 컨테이너로 웹 어플 만들거나 국제화 기능이 필요한 경우 그리고 스프링 AOP와 통합할 때 사용
-         * 웹 어플을 만드는 경우가 많으므로 application context를 가장 자주 사용. 웹 어플, 웹 서비스, restAPI, 마이크로서비스에서 사용
-         */
-
-        /**
-         * POJO(Plain Old Java Object)
-         * 순수하게 오래된 자바 객체
-         * 모든 자바 객체는 POJO
-         * HelloWorldConfiguration에서 만든 모든 빈은 POJO
-         */
-
-        /**
-         * Java Bean
-         * 1. no-arg constructor
-         * 2. getter, setter
-         * 3. serializable 인터페이스 구현
-         * 위의 3가지를 지키면 그 클래스의 인스턴스는 Java Bean이 된다.
-         */
-
-        /**
-         * Spring Bean
-         * Spring에서 관리하는 모든 것이 Spring Bean
-         * Spring에서 관리하는 모든 자바 객체
-         * spring context, spring에서 만든 bean
-         * IOC 컨테이너가 관리하는 모든 객체는 Spring Bean
-         */
-
-
-
-
-        /**
          * 스프링이 대신 객체를 생성하고 결합하도록 함
          * **JVM 내부에 스프링 컨텍스트 생성
          */
