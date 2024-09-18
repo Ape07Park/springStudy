@@ -8,7 +8,7 @@ public class GameRunner {
   private GamingConsole game;
 
     // 여기서 생성자 주입이 일어남.
-   public GameRunner(@Qualifier("superContra") GamingConsole game) {
+   public GameRunner(@Qualifier("superContra") GamingConsole game) { // @Qualifier("superContra")를 지우면 @Primary가 있는 MarioGame이 주입됨
        this.game = game;
    }
 
