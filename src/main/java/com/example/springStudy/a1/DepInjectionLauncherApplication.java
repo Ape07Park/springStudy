@@ -86,6 +86,7 @@ public class DepInjectionLauncherApplication {
            Arrays.stream(context.getBeanDefinitionNames()).forEach((System.out::println));
 
            // 빈의 이름보단 유형(.class)을 사용하는 것이 좋음
+           // toString 메소드가 정의되어 있어서 그 메소드의 리턴값인 Using com.example.springStudy.a1.Dependency1@32b260fa com.example.springStudy.a1.Dependency2@581ac8a8라는 결과가 나옴
            System.out.println(context.getBean(YourBusinessClass.class));
 
        }

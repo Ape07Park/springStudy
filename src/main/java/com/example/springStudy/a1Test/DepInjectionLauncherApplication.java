@@ -24,9 +24,9 @@ public class DepInjectionLauncherApplication {
             DataService dataService = context.getBean(DataService.class);
             BusinessCalculationService businessCalculationService = context.getBean(BusinessCalculationService.class);
 
-           int [] arr = dataService.retrieveData();
-           System.out.println(Arrays.toString(arr));
-            System.out.println(businessCalculationService.findMax());
+            int[] arr = dataService.retrieveData(); // MongoDB의 것이 주입되는 이유는 @Primary가 MongoDB이기 때문이다.
+            System.out.println(Arrays.toString(arr));
+            System.out.println(businessCalculationService.findMax()); // 여기는 Mysql의 데이터가 들어가는데 그 이유는 BusinessCalculationService의 의존성인 DataService를 mysql로 설정해서다.
         }
     }
 }
