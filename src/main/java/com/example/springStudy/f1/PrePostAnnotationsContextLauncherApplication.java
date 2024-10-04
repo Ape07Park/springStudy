@@ -1,6 +1,7 @@
 package com.example.springStudy.f1;
 
 import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -21,21 +22,22 @@ class SomeClass {
     public void initialize() {
         dependency.getReady();
     }
+
+    @PreDestroy // 어플리케이션 종료 전 빈을 스프링 컨텍스트에서 제거 전에 뭔가 해야 할 때 사용 ex) close 등 으로 자원 반환 필요 시
+    public void cleanUp() {
+        System.out.println("cleanUp");
+    }
 }
+
 
 @Component
 class SomeDependency{
-    @PostConstruct // 스프링은 자동으로 의존성을 연결하고 의존성 주입이 이루어지자 마자  @PostConstruct를 지닌 메소드를 실행 ex) db에서 데이터 가져와 초기화 할려고 할 때
-    // 초기화 수행을 위해 의존성 주입이 완료된 후에 실행되어야 하는 메소드에 사용하며 이 메소드는 클래스를 사용하기 전에 호출되야 하며 다른 빈이 이 빈을 사용할 수 있게 되기 전에 호출 됨
-//    다른 리소스에서 호출되지 않아도 수행된다.
-//      생성자가 호출되었을 때, 빈은 초기화되지 않았음(의존성 주입이 이루어지지 않았음)
+    @PostConstruct //  의존성 주입이 된 후 실행됨  @PostConstruct를 지닌 메소드를 실행. 초기화 수행을 위해 의존성 주입이 완료된 후에 실행되어야 하는 메소드에 사용 ex) db에서 데이터 가져와 초기화 할려고 할 때
 
-//이럴 때 @PostConstruct를 사용하면 의존성 주입이 끝나고 실행됨이 보장되므로 빈의 초기화에 대해서 걱정할 필요가 없다.
-//
-//2) bean 의 생애주기에서 오직 한 번만 수행된다는 것을 보장한다. (어플리케이션이 실행될 때 한번만 실행됨)
-//
-//따라서 bean이 여러 번 초기화되는 걸 방지할 수 있다.
-    // bean 초기화가 완료된 뒤 수행됨이 보장
+    // bean이 여러 번 초기화되는 걸 방지
+//      생성자가 호출되었을 때, 빈은 초기화되지 않았음(의존성 주입이 이루어지지 않았음) 이럴 때 @PostConstruct를 사용하면 의존성 주입이 끝나고 실행됨이 보장되므로 빈의 초기화에 대해서 걱정할 필요가 없다.
+
+
     public void getReady() {
         System.out.println("Some logic initialization");
     }
